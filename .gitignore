@@ -1,4 +1,5 @@
 .DS_Store
 *.class
 *.jar
-!lib/*.jar
+!gradle/**/*.jar
+build
