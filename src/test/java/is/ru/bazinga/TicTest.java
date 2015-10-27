@@ -13,9 +13,15 @@ public class TicTest {
   }
 
   @Test
-  public voit tryreturn()
-  {
-	assertEquals(1, Tic.returns(1));
+  public void testInitializeBoard() {
+    Tic tic = new Tic();
 
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+        assertEquals('e', tic.board[i][j]);
+      }
+    }  
   }
 }
+
+

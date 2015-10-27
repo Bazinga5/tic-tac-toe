@@ -2,9 +2,23 @@ package is.ru.bazinga;
 
 public class Tic {
 
-	public static returns(int a)
-	{
-		return a;
+	private static int ROWS = 3;
+	private static int COLUMNS = 3;
+	public char[][] board;
+
+	//Create a new instance of board and call a function to initialize it
+	public Tic(){
+	  board = new char[ROWS][COLUMNS];
+	  initializeBoard(); 
+	}
+
+	//Loop through rows and columns and initialize all sets to e
+	private void initializeBoard(){
+	  for(int i = 0 ; i < ROWS ;  i++){
+	    for(int j = 0 ; j < COLUMNS ; j++){
+	      board[i][j] = 'e';
+	    }
+	  }
 	}
 }
 
