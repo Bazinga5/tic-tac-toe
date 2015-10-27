@@ -11,4 +11,11 @@ public class TicTest {
   public void shouldBeZero() {
     assertEquals(0, 0);
   }
+
+  @Test
+  public voit tryreturn()
+  {
+	assertEquals(1, Tic.returns(1));
+
+  }
 }
