@@ -1,5 +1,12 @@
+# OS X
 .DS_Store
+
+# Regular Java ignores
 *.class
 *.jar
-!gradle/**/*.jar
-build
+
+# Gradle files/folders to ignore
+.gradle
+build/
+!gradle-wrapper.jar
+.gradletasknamecache
