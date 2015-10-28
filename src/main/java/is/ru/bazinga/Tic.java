@@ -5,11 +5,13 @@ public class Tic {
   private static int COLUMNS = 3;
   public char[][] board;
   public char player;
+  public int count; 
 
   //Create a new instance of board and call a function to initialize it
   public Tic(){
     board = new char[ROWS][COLUMNS];
     player = 'x';
+    count = 0; 
     initializeBoard();
   }
 
@@ -41,5 +43,30 @@ public class Tic {
     }
     return false;
   }
+  
+  //check if the move is valid, aka inside the board
+  public boolean validMove(int row, int col) {
+
+    //print out board if board is full and return false
+    if(count >= 9){
+      System.out.println("Board is full");
+      return false; 
+    }
+
+    if (row > 4 || col > 4 || row < 0 || col < 0) {
+      return false;
+    }
+
+    return true; 
+  }
+
+  //places players mark on the right place
+  public void placeMark (int row, int col, char player){
+    board[row][col] = player;
+    count++;
+  }
+
+
+
 }
 

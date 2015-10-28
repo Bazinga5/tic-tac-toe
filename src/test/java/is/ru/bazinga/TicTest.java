@@ -43,6 +43,28 @@ public class TicTest {
     assertEquals(false, tic.isEmpty(1,1));
     assertEquals(true, tic.isEmpty(2,1));
   }
+
+  @Test
+  public void testPlaceMark() {
+  
+    Tic tic = new Tic();
+    
+    //place mark of current player
+    tic.placeMark(1,1, tic.player);
+  
+    assertEquals(false, tic.isEmpty(1,1));
+    assertEquals(true, tic.isEmpty(2,1));
+  }
+
+  @Test
+  public void testValidMove() {
+  
+    Tic tic = new Tic();
+
+    assertEquals(true, tic.validMove(1,1));
+    assertEquals(false, tic.validMove(3,5));
+
+  }
 }
 
 
