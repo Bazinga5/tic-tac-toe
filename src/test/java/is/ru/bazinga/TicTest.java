@@ -21,7 +21,15 @@ public class TicTest {
       for (int j = 0; j < 3; j++) {
         assertEquals('e', tic.board[i][j]);
       }
-    }  
+    } 
+  }
+
+   @Test
+  public void testSwitchPlayer() {
+    Tic tic = new Tic();
+
+    assertEquals('o', tic.switchPlayer());
+    assertEquals('x', tic.switchPlayer());
   }
 }
 
