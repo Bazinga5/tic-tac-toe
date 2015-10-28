@@ -31,6 +31,18 @@ public class TicTest {
     assertEquals('o', tic.switchPlayer());
     assertEquals('x', tic.switchPlayer());
   }
+
+  //test if a cell is empty or not. 
+  @Test
+  public void testIsEmpty() {
+  
+  Tic tic = new Tic();
+  tic.board[1][1] = 'x';
+  
+  //testing false and true
+    assertEquals(false, tic.isEmpty(1,1));
+    assertEquals(true, tic.isEmpty(2,1));
+  }
 }
 
 
