@@ -4,11 +4,13 @@ public class Tic {
   private static int ROWS = 3;
   private static int COLUMNS = 3;
   public char[][] board;
+  public char player;
 
   //Create a new instance of board and call a function to initialize it
   public Tic(){
     board = new char[ROWS][COLUMNS];
-    initializeBoard(); 
+    player = 'x';
+    initializeBoard();
   }
 
   //Loop through rows and columns and initialize all sets to e
@@ -19,13 +21,24 @@ public class Tic {
       }
     }
   }
+  //change players mark, to see which player is next up, possible to make the
+  //function cout something about who's turn it is
+  public char switchPlayer(){
+
+    if (player == 'x'){
+      player = 'o';
+    }
+    else{
+      player = 'x';
+    }
+    return player; 
+  }
 
   //to check if the cell is empty or not
   public boolean isEmpty(int row, int col) {
     if (board[row][col] == 'e'){
       return true;
     }
-    
     return false;
   }
 }
