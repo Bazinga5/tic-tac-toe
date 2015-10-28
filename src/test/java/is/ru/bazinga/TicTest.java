@@ -12,4 +12,17 @@ public class TicTest {
   public void shouldBeZero() {
     assertEquals(0, 0);
   }
+
+  @Test
+  public void testInitializeBoard() {
+    Tic tic = new Tic();
+
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+        assertEquals('e', tic.board[i][j]);
+      }
+    }  
+  }
 }
+
+
