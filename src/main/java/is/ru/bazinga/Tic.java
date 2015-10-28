@@ -47,26 +47,57 @@ public class Tic {
   //check if the move is valid, aka inside the board
   public boolean validMove(int row, int col) {
 
-    //print out board if board is full and return false
-    if(count >= 9){
-      System.out.println("Board is full");
-      return false; 
+    //check if the board is full and a tie
+    if(count > 9){
+      System.out.println("Tie! Game Over!");
+      return true; 
     }
-
-    if (row > 4 || col > 4 || row < 0 || col < 0) {
+    //if not in the board return false
+    if (row > 3 || col > 3 || row < 0 || col < 0) {
       return false;
     }
-
-    return true; 
+    return true;
   }
 
   //places players mark on the right place
-  public void placeMark (int row, int col, char player){
-    board[row][col] = player;
+  public void placeMark (int row, int col, char p){
+
+    if(!isEmpty(row, col)){
+      System.out.println("Not a valid move");
+      //please make another move!
+      return;
+    }
+        
+    board[row][col] = p; 
     count++;
+
   }
 
+  public boolean isWinner () {
 
-
+    for (int i = 0 ; i < ROWS ; i++){
+      if(board[0][i] == board[1][i] && board[0][i] == board[2][i]){
+        if(board[0][i] != 'e'){
+          return true;
+        }
+      }
+      else if(board[i][0] == board[i][1] && board[i][0] == board[i][2]){
+        if(board[i][0] != 'e'){
+          return true;
+        }
+      }
+    }
+    
+    if(board[0][0] == board[1][1] && board[0][0] == board[2][2]){
+        if(board[0][0] != 'e'){
+          return true;
+        }
+    }  
+    else if(board[0][2] == board[1][1] && board[0][2]== board[2][0]){
+        if(board[0][2] != 'e'){
+          return true;
+        }
+    }
+    return false; 
+  }
 }
-

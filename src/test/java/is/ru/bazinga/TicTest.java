@@ -36,10 +36,10 @@ public class TicTest {
   @Test
   public void testIsEmpty() {
   
-  Tic tic = new Tic();
-  tic.board[1][1] = 'x';
+    Tic tic = new Tic();
+    tic.board[1][1] = 'x';
   
-  //testing false and true
+    //testing false and true
     assertEquals(false, tic.isEmpty(1,1));
     assertEquals(true, tic.isEmpty(2,1));
   }
@@ -48,10 +48,9 @@ public class TicTest {
   public void testPlaceMark() {
   
     Tic tic = new Tic();
-    
     //place mark of current player
     tic.placeMark(1,1, tic.player);
-  
+
     assertEquals(false, tic.isEmpty(1,1));
     assertEquals(true, tic.isEmpty(2,1));
   }
@@ -60,11 +59,30 @@ public class TicTest {
   public void testValidMove() {
   
     Tic tic = new Tic();
-
     assertEquals(true, tic.validMove(1,1));
     assertEquals(false, tic.validMove(3,5));
-
   }
+
+  @Test
+  public void testNoWinner() {
+
+    Tic tic = new Tic();
+    tic.board[0][0] = 'x';
+    tic.board[0][1] = 'x';
+    tic.board[0][2] = 'o';
+  
+    assertEquals(false, tic.isWinner()); 
+  }
+
+@Test
+  public void testIsWinner() {
+
+    Tic tic = new Tic();
+    tic.board[0][0] = 'x';
+    tic.board[0][1] = 'x';
+    tic.board[0][2] = 'x';
+  
+    assertEquals(true, tic.isWinner()); 
+   }    
+
 }
-
-
