@@ -19,5 +19,14 @@ public class Tic {
       }
     }
   }
+
+  //to check if the cell is empty or not
+  public boolean isEmpty(int row, int col) {
+    if (board[row][col] == 'e'){
+      return true;
+    }
+    
+    return false;
+  }
 }
 
