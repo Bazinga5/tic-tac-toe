@@ -1,5 +1,9 @@
 package is.ru.bazinga;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Tic {
   private static int ROWS = 3;
   private static int COLUMNS = 3;
@@ -15,7 +19,7 @@ public class Tic {
     initializeBoard();
   }
 
-  //Loop through rows and columns and initialize all sets to e
+  //Loop through rows and columns and initialize all sets to '-'
   private void initializeBoard() {
     for (int i = 0; i < ROWS;  i++) {
       for (int j = 0; j < COLUMNS; j++) {
@@ -100,4 +104,22 @@ public class Tic {
     }
     return false; 
   }
+
+ 
+  //print board to console
+      public void printBoard(){
+        
+        String forout;
+
+        for (int i = 0; i < 3; i++){          
+          for (int j = 0; j < 3; j++){
+            System.out.print(board[i][j] + ' ');
+          }
+          System.out.println();
+        }
+      }
+
+      
 }
+
+
