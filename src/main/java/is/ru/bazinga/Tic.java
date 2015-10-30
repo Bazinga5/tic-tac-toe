@@ -1,5 +1,9 @@
 package is.ru.bazinga;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Tic {
   private static int ROWS = 3;
   private static int COLUMNS = 3;
@@ -59,18 +63,82 @@ public class Tic {
     return true;
   }
 
-  //places players mark on the right place
-  public void placeMark (int row, int col, char p){
+   //message for invalid move, let´s player choose again.
+  public void notValidMove(int place){
+    System.out.println("Not a valid move, please choose again");
+    placeMark(place);
+  }
 
-    if(!isEmpty(row, col)){
-      System.out.println("Not a valid move");
-      //please make another move!
-      return;
+   //places players mark on the right place
+  public void placeMark(int place){
+    
+    switch(place){
+      
+      case 1: if(!isEmpty(0, 0)){
+        notValidMove(place);
+        break;
+      }
+      board[0][0] = player;
+      count++;
+      break;
+      case 2: if(!isEmpty(0, 1)){
+        notValidMove(place);
+        break;
+      }
+      board[0][1] = player;
+      count++;
+      break;
+      case 3: if(!isEmpty(0, 2)){
+        notValidMove(place);
+        break;
+      }
+      board[0][2] = player;
+      count++;
+      break;
+      case 4: if(!isEmpty(1, 0)){
+        notValidMove(place);
+        break;
+      }
+      board[1][0] = player;
+      count++;
+      break;
+      case 5: if(!isEmpty(1, 1)){
+        notValidMove(place);
+        break;
+      }
+      board[1][1] = player;
+      count++;
+      break;
+      case 6: if(!isEmpty(1, 2)){
+        notValidMove(place);
+        break;
+      }
+      board[1][2] = player;
+      count++;
+      break;
+      case 7: if(!isEmpty(2, 0)){
+        notValidMove(place);
+        break;
+      }
+      board[2][0] = player;
+      count++;
+      break;
+      case 8: if(!isEmpty(2, 1)){
+        notValidMove(place);
+        break;
+      }board[2][1] = player;
+      count++;
+      break;
+      case 9: if(!isEmpty(2, 2)){
+        notValidMove(place);
+        break;
+      }
+      board[2][2] = player;
+      count++;
+      break;
+      default: notValidMove(place);
+      break;
     }
-        
-    board[row][col] = p; 
-    count++;
-
   }
 
   public boolean isWinner () {
@@ -100,4 +168,11 @@ public class Tic {
     }
     return false; 
   }
+
+  
+  
+  
+ 
+
+
 }

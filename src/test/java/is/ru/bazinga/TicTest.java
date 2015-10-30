@@ -46,12 +46,12 @@ public class TicTest {
 
   @Test
   public void testPlaceMark() {
-  
+
     Tic tic = new Tic();
     //place mark of current player
-    tic.placeMark(1,1, tic.player);
+    tic.placeMark(1);
 
-    assertEquals(false, tic.isEmpty(1,1));
+    assertEquals(false, tic.isEmpty(0,0));
     assertEquals(true, tic.isEmpty(2,1));
   }
 
@@ -83,6 +83,7 @@ public class TicTest {
     tic.board[0][2] = 'x';
   
     assertEquals(true, tic.isWinner()); 
-   }    
+   }
+
 
 }
