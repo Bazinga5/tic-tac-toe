@@ -1,12 +1,4 @@
-<<<<<<< HEAD:designReport
-##Design report for Tic Tac Toe
-=======
-#Design Report for Tic Tac Toe from group Bazinga!
-
-Assignment: Tic Tac Toe
-Language: Java
-Method: agile and TDD
->>>>>>> 59d2aa5266d2935d42124dc3195dc8ec1b339f8d:designReport.md
+#Design Report for Tic Tac Toe
 
 ###The assignment
 For this assignment we chose to apply the agile methodology and TDD and feature branch workflow on GitHub. Our assignment was to create a simple version of the classic game Tic Tac Toe. 
