@@ -9,13 +9,13 @@ public class Tic {
   private static int COLUMNS = 3;
   public char[][] board;
   public char player;
-  public int count; 
+  public int count;
 
   //Create a new instance of board and call a function to initialize it
   public Tic(){
     board = new char[ROWS][COLUMNS];
     player = 'x';
-    count = 0; 
+    count = 0;
     initializeBoard();
   }
 
@@ -47,14 +47,14 @@ public class Tic {
     }
     return false;
   }
-  
+
   //check if the move is valid, aka inside the board
   public boolean validMove(int row, int col) {
 
     //check if the board is full and a tie
     if(count > 9){
       System.out.println("Tie! Game Over!");
-      return true; 
+      return true;
     }
     //if not in the board return false
     if (row > 3 || col > 3 || row < 0 || col < 0) {
@@ -175,11 +175,8 @@ public class Tic {
       for (int j = 0; j < 3; j++){
         System.out.print(board[i][j] + ' ');
       }
-      
+
       System.out.println();
     }
   }
 }
-
-
-
