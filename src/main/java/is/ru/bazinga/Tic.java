@@ -1,9 +1,5 @@
 package is.ru.bazinga;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 public class Tic {
   private static int ROWS = 3;
   private static int COLUMNS = 3;
@@ -74,7 +70,6 @@ public class Tic {
         
     board[row][col] = p; 
     count++;
-
   }
 
   public boolean isWinner () {
@@ -109,8 +104,6 @@ public class Tic {
   //print board to console
       public void printBoard(){
         
-        String forout;
-
         for (int i = 0; i < 3; i++){          
           for (int j = 0; j < 3; j++){
             System.out.print(board[i][j] + ' ');
@@ -118,8 +111,6 @@ public class Tic {
           System.out.println();
         }
       }
-
-      
 }
 
 
