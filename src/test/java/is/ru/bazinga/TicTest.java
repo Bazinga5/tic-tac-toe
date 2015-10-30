@@ -84,5 +84,4 @@ public class TicTest {
   
     assertEquals(true, tic.isWinner()); 
    }    
-
 }

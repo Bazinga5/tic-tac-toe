@@ -15,7 +15,7 @@ public class Tic {
     initializeBoard();
   }
 
-  //Loop through rows and columns and initialize all sets to e
+  //Loop through rows and columns and initialize all sets to '-'
   private void initializeBoard() {
     for (int i = 0; i < ROWS;  i++) {
       for (int j = 0; j < COLUMNS; j++) {
@@ -70,7 +70,6 @@ public class Tic {
         
     board[row][col] = p; 
     count++;
-
   }
 
   public boolean isWinner () {
@@ -100,4 +99,18 @@ public class Tic {
     }
     return false; 
   }
+
+ 
+  //print board to console
+      public void printBoard(){
+        
+        for (int i = 0; i < 3; i++){          
+          for (int j = 0; j < 3; j++){
+            System.out.print(board[i][j] + ' ');
+          }
+          System.out.println();
+        }
+      }
 }
+
+
