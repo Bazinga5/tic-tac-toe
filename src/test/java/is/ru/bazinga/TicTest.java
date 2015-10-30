@@ -19,9 +19,9 @@ public class TicTest {
 
     for (int i = 0; i < 3; i++) {
       for (int j = 0; j < 3; j++) {
-        assertEquals('e', tic.board[i][j]);
+        assertEquals('-', tic.board[i][j]);
       }
-    } 
+    }
   }
 
    @Test
@@ -35,7 +35,7 @@ public class TicTest {
   //test if a cell is empty or not. 
   @Test
   public void testIsEmpty() {
-  
+
     Tic tic = new Tic();
     tic.board[1][1] = 'x';
   
@@ -57,7 +57,7 @@ public class TicTest {
 
   @Test
   public void testValidMove() {
-  
+
     Tic tic = new Tic();
     assertEquals(true, tic.validMove(1,1));
     assertEquals(false, tic.validMove(3,5));
@@ -70,20 +70,21 @@ public class TicTest {
     tic.board[0][0] = 'x';
     tic.board[0][1] = 'x';
     tic.board[0][2] = 'o';
-  
-    assertEquals(false, tic.isWinner()); 
+
+    assertEquals(false, tic.isWinner());
   }
 
-@Test
+  @Test
   public void testIsWinner() {
 
     Tic tic = new Tic();
     tic.board[0][0] = 'x';
     tic.board[0][1] = 'x';
     tic.board[0][2] = 'x';
-  
-    assertEquals(true, tic.isWinner()); 
+
+    assertEquals(true, tic.isWinner());
    }
 
-
 }
+
+
