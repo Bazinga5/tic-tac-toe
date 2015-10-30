@@ -15,11 +15,11 @@ public class Tic {
     initializeBoard();
   }
 
-  //Loop through rows and columns and initialize all sets to e
+  //Loop through rows and columns and initialize all sets to '-'
   private void initializeBoard() {
     for (int i = 0; i < ROWS;  i++) {
       for (int j = 0; j < COLUMNS; j++) {
-        board[i][j] = 'e';
+        board[i][j] = '-';
       }
     }
   }
@@ -38,7 +38,7 @@ public class Tic {
 
   //to check if the cell is empty or not
   public boolean isEmpty(int row, int col) {
-    if (board[row][col] == 'e'){
+    if (board[row][col] == '-'){
       return true;
     }
     return false;
@@ -70,34 +70,47 @@ public class Tic {
         
     board[row][col] = p; 
     count++;
-
   }
 
   public boolean isWinner () {
 
     for (int i = 0 ; i < ROWS ; i++){
       if(board[0][i] == board[1][i] && board[0][i] == board[2][i]){
-        if(board[0][i] != 'e'){
+        if(board[0][i] != '-'){
           return true;
         }
       }
       else if(board[i][0] == board[i][1] && board[i][0] == board[i][2]){
-        if(board[i][0] != 'e'){
+        if(board[i][0] != '-'){
           return true;
         }
       }
     }
     
     if(board[0][0] == board[1][1] && board[0][0] == board[2][2]){
-        if(board[0][0] != 'e'){
+        if(board[0][0] != '-'){
           return true;
         }
     }  
     else if(board[0][2] == board[1][1] && board[0][2]== board[2][0]){
-        if(board[0][2] != 'e'){
+        if(board[0][2] != '-'){
           return true;
         }
     }
     return false; 
   }
+
+ 
+  //print board to console
+      public void printBoard(){
+        
+        for (int i = 0; i < 3; i++){          
+          for (int j = 0; j < 3; j++){
+            System.out.print(board[i][j] + ' ');
+          }
+          System.out.println();
+        }
+      }
 }
+
+

@@ -19,7 +19,7 @@ public class TicTest {
 
     for (int i = 0; i < 3; i++) {
       for (int j = 0; j < 3; j++) {
-        assertEquals('e', tic.board[i][j]);
+        assertEquals('-', tic.board[i][j]);
       }
     } 
   }
@@ -84,5 +84,4 @@ public class TicTest {
   
     assertEquals(true, tic.isWinner()); 
    }    
-
 }
