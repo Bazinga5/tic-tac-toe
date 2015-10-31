@@ -56,14 +56,6 @@ public class TicTest {
   }
 
   @Test
-  public void testValidMove() {
-
-    Tic tic = new Tic();
-    assertEquals(true, tic.validMove(1,1));
-    assertEquals(false, tic.validMove(3,5));
-  }
-
-  @Test
   public void testNoWinner() {
 
     Tic tic = new Tic();
@@ -83,6 +75,20 @@ public class TicTest {
     tic.board[0][2] = 'x';
 
     assertEquals(true, tic.isWinner());
+   }
+
+  @Test
+  public void testInBounds() {
+
+    Tic tic = new Tic();
+    int position[] = new int[2];
+    position[0] = 0;
+    position[1] = 1;
+    assertEquals(true, tic.inBounds(position));
+    
+    position[0] = 4;
+    position[1] = 4;
+    assertEquals(false, tic.inBounds(position));
    }
 
 }
