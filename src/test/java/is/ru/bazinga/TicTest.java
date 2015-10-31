@@ -2,6 +2,7 @@ package is.ru.bazinga;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class TicTest {
   public static void main(String args[]) {
@@ -84,6 +85,20 @@ public class TicTest {
 
     assertEquals(true, tic.isWinner());
    }
+
+  @Test
+  public void getBoardPos() {
+
+    Tic tic = new Tic();
+   
+    assertArrayEquals(new int[]{0,0}, tic.getBoardPosition(1));
+    assertArrayEquals(new int[]{2,2}, tic.getBoardPosition(9));
+
+
+  }
+
+
+
 
 }
 
