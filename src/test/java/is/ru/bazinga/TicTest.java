@@ -1,7 +1,7 @@
 package is.ru.bazinga;
 
+import static org.junit.Assert.*;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
@@ -80,6 +80,11 @@ public class TicTest {
    }
 
   @Test
+  public void getBoardPos() {
+    assertArrayEquals(new int[]{0,0}, Tic.getBoardPosition(1));
+    assertArrayEquals(new int[]{2,2}, Tic.getBoardPosition(9));
+  }
+
   public void testGetChar() {
     ByteArrayInputStream in = new ByteArrayInputStream("y".getBytes());
     System.setIn(in);
@@ -120,7 +125,5 @@ public class TicTest {
     position[0] = 4;
     position[1] = 4;
     assertEquals(false, Tic.inBounds(position));
-   }
+  }
 }
-
-

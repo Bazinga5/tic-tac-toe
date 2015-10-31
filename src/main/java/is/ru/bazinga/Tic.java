@@ -177,6 +177,55 @@ public class Tic {
     }
   }
 
+  public static int[] getBoardPosition(int place) {
+    int[] position = new int[2];
+
+    switch (place) {
+    case 1:
+      position[0] = 0;
+      position[1] = 0;
+      break;
+    case 2:
+      position[0] = 0;
+      position[1] = 1;
+      break;
+    case 3:
+      position[0] = 0;
+      position[1] = 2;
+      break;
+    case 4:
+      position[0] = 1;
+      position[1] = 0;
+      break;
+    case 5:
+      position[0] = 1;
+      position[1] = 1;
+      break;
+    case 6:
+      position[0] = 1;
+      position[1] = 2;
+      break;
+    case 7:
+      position[0] = 2;
+      position[1] = 0;
+      break;
+    case 8:
+      position[0] = 2;
+      position[1] = 1;
+      break;
+    case 9:
+      position[0] = 2;
+      position[1] = 2;
+      break;
+    default:
+      position[0] = -1;
+      position[1] = -1;
+      break;
+    }
+
+    return position;
+  }
+
   protected static char getChar() {
     char c = '\0';
 
