@@ -85,6 +85,7 @@ public class TicTest {
     assertArrayEquals(new int[]{2,2}, Tic.getBoardPosition(9));
   }
 
+  @Test
   public void testGetChar() {
     ByteArrayInputStream in = new ByteArrayInputStream("y".getBytes());
     System.setIn(in);
