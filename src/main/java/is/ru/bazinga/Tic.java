@@ -111,6 +111,22 @@ public class Tic {
           System.out.println();
         }
       }
+
+  public static boolean newGame(){
+    System.out.print("Again? ");
+    char playAgain = getChar();
+    return playAgain == 'y' || playAgain == 'Y';
+  }
+  protected static char getChar() {
+    char c = '\0';
+
+    try {
+      c = (char) System.in.read();
+    } catch(Exception ex) {}
+
+    return c;
+  }
+
 }
 
 

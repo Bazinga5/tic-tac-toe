@@ -83,5 +83,12 @@ public class TicTest {
     tic.board[0][2] = 'x';
   
     assertEquals(true, tic.isWinner()); 
-   }    
+   }
+    
+@Test
+  public void testNewGame() {
+    
+    Tic tic = new Tic();
+    assertEquals(false, tic.newGame()); 
+  }
 }
