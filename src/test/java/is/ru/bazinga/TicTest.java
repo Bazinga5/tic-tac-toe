@@ -1,7 +1,8 @@
 package is.ru.bazinga;
-
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import java.io.ByteArrayInputStream;
+import java.util.Scanner;
 
 public class TicTest {
   public static void main(String args[]) {
@@ -86,9 +87,20 @@ public class TicTest {
    }
     
 @Test
-  public void testNewGame() {
+  public void testNewGameFalse() {
     
     Tic tic = new Tic();
     assertEquals(false, tic.newGame()); 
+  }
+
+
+@Test
+  public void testNewGameTrue() {
+
+    ByteArrayInputStream in = new ByteArrayInputStream("y".getBytes());
+    System.setIn(in);
+    
+    Tic tic = new Tic();
+    assertEquals(true, Tic.newGame());
   }
 }

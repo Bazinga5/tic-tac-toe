@@ -117,7 +117,8 @@ public class Tic {
     char playAgain = getChar();
     return playAgain == 'y' || playAgain == 'Y';
   }
-  protected static char getChar() {
+  
+protected static char getChar() {
     char c = '\0';
 
     try {
