@@ -1,16 +1,21 @@
 #!/bin/bash
-set -e # exit with nonzero exit code if anything fails
 
-# run compile script
-./gradlew test
+# Only deploy status on master
+if [ $TRAVIS_BRANCH == 'master' ]; then
+  # exit with nonzero exit code if anything fails
+  set -e
 
-cd build/reports/tests
-git init
+  # run compile script
+  ./gradlew test
 
-git config user.name "Travis CI"
-git config user.email "ragnar.valgeirsson@gmail.com"
+  cd build/reports/tests
+  git init
 
-git add .
-git commit -m "Deploy to GitHub Pages"
+  git config user.name "Travis CI"
+  git config user.email "ragnar.valgeirsson@gmail.com"
 
-git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
+  git add .
+  git commit -m "Deploy to GitHub Pages"
+
+  git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
+fi
