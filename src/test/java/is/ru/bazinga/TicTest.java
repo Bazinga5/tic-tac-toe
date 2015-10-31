@@ -58,14 +58,6 @@ public class TicTest {
   }
 
   @Test
-  public void testValidMove() {
-
-    Tic tic = new Tic();
-    assertEquals(true, tic.validMove(1,1));
-    assertEquals(false, tic.validMove(3,5));
-  }
-
-  @Test
   public void testNoWinner() {
 
     Tic tic = new Tic();
@@ -87,43 +79,49 @@ public class TicTest {
     assertEquals(true, tic.isWinner());
    }
 
-   @Test
-   public void testGetChar() {
-    
+  @Test
+  public void testGetChar() {
     ByteArrayInputStream in = new ByteArrayInputStream("y".getBytes());
     System.setIn(in);
 
     Tic.in = new Scanner(in);
 
     assertEquals('y', Tic.getChar());
+  }
 
-    } 
-
-    @Test
-   public void testGetCharAgain() {
-    
+  @Test
+  public void testGetCharAgain() {
     ByteArrayInputStream in = new ByteArrayInputStream("c".getBytes());
     System.setIn(in);
 
     Tic.in = new Scanner(in);
 
     assertEquals('c', Tic.getChar());
+  }
 
-    } 
-
-    @Test
-    public void testGetInt() {
-    
+  @Test
+  public void testGetInt() {
     ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
     System.setIn(in);
 
     Tic.in = new Scanner(in);
 
     assertEquals(1, Tic.getInt());
+  }
 
-    } 
+  @Test
+  public void testInBounds() {
+    Tic tic = new Tic();
+    int position[] = new int[2];
 
-
+    position[0] = 0;
+    position[1] = 1;
+    assertEquals(true, tic.inBounds(position));
+    
+    position[0] = 4;
+    position[1] = 4;
+    assertEquals(false, tic.inBounds(position));
+   }
 }
 
 
