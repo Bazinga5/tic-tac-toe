@@ -3,8 +3,11 @@ package is.ru.bazinga;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ByteArrayInputStream;
+import java.util.Scanner;
 
 public class Tic {
+  public static Scanner in = new Scanner(System.in);
   private static int ROWS = 3;
   private static int COLUMNS = 3;
   public char[][] board;
@@ -67,6 +70,10 @@ public class Tic {
   public void notValidMove(int place){
     System.out.println("Not a valid move, please choose again");
     placeMark(place);
+  }
+
+   public static void illegalMove(){
+    System.out.println("Not a valid move, please choose again");
   }
 
    //places players mark on the right place
@@ -178,5 +185,24 @@ public class Tic {
 
       System.out.println();
     }
+  }
+
+  protected static char getChar() {
+    char c = '\0';
+
+    try {
+      c = (char) System.in.read();
+    } catch(Exception ex) {}
+
+    return c;
+  }
+
+  protected static int getInt() {
+    while (!in.hasNextInt()) {
+      in.next();
+      illegalMove();
+    }
+
+    return in.nextInt();
   }
 }

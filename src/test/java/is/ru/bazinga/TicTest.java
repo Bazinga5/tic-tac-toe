@@ -2,6 +2,8 @@ package is.ru.bazinga;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import java.io.ByteArrayInputStream;
+import java.util.Scanner;
 
 public class TicTest {
   public static void main(String args[]) {
@@ -84,6 +86,43 @@ public class TicTest {
 
     assertEquals(true, tic.isWinner());
    }
+
+   @Test
+   public void testGetChar() {
+    
+    ByteArrayInputStream in = new ByteArrayInputStream("y".getBytes());
+    System.setIn(in);
+
+    Tic.in = new Scanner(in);
+
+    assertEquals('y', Tic.getChar());
+
+    } 
+
+    @Test
+   public void testGetCharAgain() {
+    
+    ByteArrayInputStream in = new ByteArrayInputStream("c".getBytes());
+    System.setIn(in);
+
+    Tic.in = new Scanner(in);
+
+    assertEquals('c', Tic.getChar());
+
+    } 
+
+    @Test
+    public void testGetInt() {
+    
+    ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
+    System.setIn(in);
+
+    Tic.in = new Scanner(in);
+
+    assertEquals(1, Tic.getInt());
+
+    } 
+
 
 }
 
