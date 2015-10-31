@@ -4,6 +4,8 @@
 
 A tic tac toe implementation.
 
+Test reports are located at: [bazinga5.github.io/tic-tac-toe](http://bazinga5.github.io/tic-tac-toe/)
+
 ## Usage:
 
 Build:
@@ -15,4 +17,3 @@ Test:
 ```sh
 $ ./gradlew test
 ```
-
