@@ -75,7 +75,6 @@ public class TicTest {
     tic.board[0][0] = 'x';
     tic.board[0][1] = 'x';
     tic.board[0][2] = 'x';
-<<<<<<< HEAD
   
     assertEquals(true, tic.isWinner()); 
    }
