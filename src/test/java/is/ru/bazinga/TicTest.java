@@ -111,16 +111,15 @@ public class TicTest {
 
   @Test
   public void testInBounds() {
-    Tic tic = new Tic();
     int position[] = new int[2];
 
     position[0] = 0;
     position[1] = 1;
-    assertEquals(true, tic.inBounds(position));
+    assertEquals(true, Tic.inBounds(position));
     
     position[0] = 4;
     position[1] = 4;
-    assertEquals(false, tic.inBounds(position));
+    assertEquals(false, Tic.inBounds(position));
    }
 }
 
