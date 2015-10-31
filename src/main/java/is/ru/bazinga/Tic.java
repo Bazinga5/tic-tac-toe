@@ -238,7 +238,7 @@ public class Tic {
   }
 
   protected String gameOverMessage() {
-    if (count < 10) {
+    if (count < 9) {
       switchPlayer();
       return "Winner: " + player;
     } else {
