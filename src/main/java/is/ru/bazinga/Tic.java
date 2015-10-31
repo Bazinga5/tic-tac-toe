@@ -229,4 +229,21 @@ public class Tic {
     return position;
   }
 
+  public void openingGreeting(){
+    System.out.println("Welcome to a simple game of tic-tac-toe.");
+    System.out.println("The squares are numbered from 1 - 9 (like on a phone).");
+    System.out.println("X is the first player. X make your move.");
+    System.out.println("| 1  2  3 |\n| 4  5  6 |\n| 7  8  9 |");
+    System.out.println("May the force be with you.");
+  }
+
+  protected String gameOverMessage() {
+    if (count < 10) {
+      switchPlayer();
+      return "Winner: " + player;
+    } else {
+      return "Tie!";
+    }
+  }
+
 }
