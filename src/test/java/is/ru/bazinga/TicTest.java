@@ -1,8 +1,9 @@
 package is.ru.bazinga;
 
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.*;
+import org.junit.Test;
+import java.io.ByteArrayInputStream;
+import java.util.Scanner;
 
 public class TicTest {
   public static void main(String args[]) {
@@ -57,14 +58,6 @@ public class TicTest {
   }
 
   @Test
-  public void testValidMove() {
-
-    Tic tic = new Tic();
-    assertEquals(true, tic.validMove(1,1));
-    assertEquals(false, tic.validMove(3,5));
-  }
-
-  @Test
   public void testNoWinner() {
 
     Tic tic = new Tic();
@@ -88,18 +81,50 @@ public class TicTest {
 
   @Test
   public void getBoardPos() {
-
-    Tic tic = new Tic();
-   
-    assertArrayEquals(new int[]{0,0}, tic.getBoardPosition(1));
-    assertArrayEquals(new int[]{2,2}, tic.getBoardPosition(9));
-
-
+    assertArrayEquals(new int[]{0,0}, Tic.getBoardPosition(1));
+    assertArrayEquals(new int[]{2,2}, Tic.getBoardPosition(9));
   }
 
+  @Test
+  public void testGetChar() {
+    ByteArrayInputStream in = new ByteArrayInputStream("y".getBytes());
+    System.setIn(in);
 
+    Tic.in = new Scanner(in);
 
+    assertEquals('y', Tic.getChar());
+  }
 
+  @Test
+  public void testGetCharAgain() {
+    ByteArrayInputStream in = new ByteArrayInputStream("c".getBytes());
+    System.setIn(in);
+
+    Tic.in = new Scanner(in);
+
+    assertEquals('c', Tic.getChar());
+  }
+
+  @Test
+  public void testGetInt() {
+    ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
+    System.setIn(in);
+
+    Tic.in = new Scanner(in);
+
+    assertEquals(1, Tic.getInt());
+  }
+
+  @Test
+  public void testInBounds() {
+    int position[] = new int[2];
+
+    position[0] = 0;
+    position[1] = 1;
+    assertEquals(true, Tic.inBounds(position));
+    
+    position[0] = 4;
+    position[1] = 4;
+    assertEquals(false, Tic.inBounds(position));
+  }
 }
-
-
