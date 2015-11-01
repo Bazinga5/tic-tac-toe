@@ -7,7 +7,7 @@ For this assignment we chose to apply the agile methodology and TDD and feature 
 
 About the game
 ----------------
-Tic Tac Toe is a two player game played on a 3x3 grid. Player 1 is assigned the character X and player 2 is assigned the character O. The player who gets a complete row, horizontal, vertical or a diagonal line of X or Y wins the game. There is a possibility of a tie between players. 
+Tic Tac Toe is a two player game played on a 3x3 grid. Player 1 is assigned the character X and player 2 is assigned the character O. The player who gets a complete row, horizontal, vertical or a diagonal line of X or O wins the game. There is a possibility of a tie between players. 
 
 About our design 
 ----------------
