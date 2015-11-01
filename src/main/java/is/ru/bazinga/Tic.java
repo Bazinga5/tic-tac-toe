@@ -15,7 +15,7 @@ public class Tic {
   public int count;
 
   //Create a new instance of board and call a function to initialize it
-  public Tic(){
+  public Tic() {
     board = new char[ROWS][COLUMNS];
     player = 'x';
     count = 0;
@@ -32,7 +32,7 @@ public class Tic {
   }
   //change players mark, to see which player is next up, possible to make the
   //function cout something about who's turn it is
-  public char switchPlayer(){
+  public char switchPlayer() {
 
     if (player == 'x'){
       player = 'o';
@@ -52,8 +52,6 @@ public class Tic {
   }
 
   //message for invalid move, let´s player choose again.
-  
-
   public static void notValidMove() {
     System.out.println("Not a valid move, please choose again");
   }
@@ -104,16 +102,20 @@ public class Tic {
     return false;
   }
 
-  public void printBoard(){
+  public void printBoard() {
     for (int i = 0; i < 3; i++){
       for (int j = 0; j < 3; j++){
         System.out.print(board[i][j] + ' ');
       }
-
       System.out.println();
     }
   }
-
+  public static boolean newGame() {
+    System.out.print("Again? ");
+    char playAgain = getChar();
+    return playAgain == 'y' || playAgain == 'Y';
+  }
+  
   public static int[] getBoardPosition(int place) {
     int[] position = new int[2];
 
@@ -163,7 +165,7 @@ public class Tic {
     return position;
   }
 
-  public void openingGreeting(){
+  public void openingGreeting() {
     System.out.println("Welcome to a simple game of tic-tac-toe.");
     System.out.println("The squares are numbered from 1 - 9 (like on a phone).");
     System.out.println("X is the first player. X make your move.");

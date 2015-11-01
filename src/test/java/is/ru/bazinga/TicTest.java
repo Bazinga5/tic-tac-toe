@@ -75,8 +75,26 @@ public class TicTest {
     tic.board[0][0] = 'x';
     tic.board[0][1] = 'x';
     tic.board[0][2] = 'x';
+  
+    assertEquals(true, tic.isWinner()); 
+   }
+    
+@Test
+  public void testNewGameFalse() {
+    
+    Tic tic = new Tic();
+    assertEquals(false, tic.newGame()); 
+  }
 
-    assertEquals(true, tic.isWinner());
+
+@Test
+  public void testNewGameTrue() {
+
+    ByteArrayInputStream in = new ByteArrayInputStream("y".getBytes());
+    System.setIn(in);
+    
+    Tic tic = new Tic();
+    assertEquals(true, Tic.newGame());
    }
 
   @Test
