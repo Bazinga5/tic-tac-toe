@@ -1,15 +1,12 @@
 package is.ru.bazinga;
 
-
-import java.util.Scanner;
-
 public class Tic {
-  public static Scanner in = new Scanner(System.in);
   private static int ROWS = 3;
   private static int COLUMNS = 3;
   public char[][] board;
   public char player;
   public int count;
+  protected int currentMove;
 
   //Create a new instance of board and call a function to initialize it
   public Tic() {
@@ -27,6 +24,7 @@ public class Tic {
       }
     }
   }
+
   //change players mark, to see which player is next up, possible to make the
   //function cout something about who's turn it is
   public char switchPlayer() {
@@ -48,17 +46,12 @@ public class Tic {
     return false;
   }
 
-  //message for invalid move, let´s player choose again.
-  public static void notValidMove() {
-    System.out.println("Not a valid move, please choose again");
-  }
-
   public static boolean inBounds(int[] pos) {
     return pos[0] < 4 && pos[1] < 4 && pos[0] >= 0 && pos[1] >= 0;
   }
 
-   //places players mark on the right place
-   public void placeMark(int place) {
+  //places players mark on the right place
+  public void placeMark(int place) {
     int[] pos = getBoardPosition(place);
 
     if(inBounds(pos) && isEmpty(pos[0], pos[1])){
@@ -66,8 +59,6 @@ public class Tic {
       count++;
       return;
     }
-
-    notValidMove();
   }
 
   public boolean isWinner () {
@@ -99,20 +90,6 @@ public class Tic {
     return false;
   }
 
-  public void printBoard() {
-    for (int i = 0; i < 3; i++){
-      for (int j = 0; j < 3; j++){
-        System.out.print(board[i][j] + ' ');
-      }
-      System.out.println();
-    }
-  }
-  public static boolean newGame() {
-    System.out.print("Again? ");
-    char playAgain = getChar();
-    return playAgain == 'y' || playAgain == 'Y';
-  }
-  
   public static int[] getBoardPosition(int place) {
     int[] position = new int[2];
 
@@ -162,56 +139,26 @@ public class Tic {
     return position;
   }
 
-  public void openingGreeting() {
-    System.out.println("Welcome to a simple game of tic-tac-toe.");
-    System.out.println("The squares are numbered from 1 - 9 (like on a phone).");
-    System.out.println("X is the first player. X make your move.");
-    System.out.println("| 1  2  3 |\n| 4  5  6 |\n| 7  8  9 |");
-    System.out.println("May the force be with you.");
+  protected void greet() {}
+  protected void display() {}
+  protected void gameOver() {}
+
+  protected int getCurrentMove() {
+    return currentMove;
   }
 
-  protected String gameOverMessage() {
-    if (count < 9) {
-      switchPlayer();
-      return "Winner: " + player;
-    } else {
-      return "Tie!";
-    }
+  protected static void startGame() {
+    Tic game = new Tic();
+    game.greet();
+    game.display();
+
+    while (game.count < 9 && !game.isWinner()) {
+      game.placeMark(game.getCurrentMove());
+      game.switchPlayer();
+      game.display();
+    } 
+
+    game.gameOver();
   }
-
-  protected static char getChar() {
-    char c = '\0';
-
-    try {
-      c = (char) System.in.read();
-    } catch(Exception ex) {}
-
-    return c;
-  }
-
-  protected static int getInt() {
-    while (!in.hasNextInt()) {
-      in.next();
-      notValidMove();
-    }
-
-    return in.nextInt();
-  }
-
-  public static void main(String[] args) {
-      
-        do {
-          Tic tic = new Tic();
-          tic.openingGreeting();
-          tic.printBoard();
-
-          while (tic.count < 9 && !tic.isWinner()) {
-            tic.placeMark(getInt());
-            tic.switchPlayer();
-            tic.printBoard();
-          }
-       
-          System.out.println(tic.gameOverMessage());
-        } while(newGame());
-      }
 }
+
