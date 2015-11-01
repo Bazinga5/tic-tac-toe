@@ -1,9 +1,6 @@
 package is.ru.bazinga;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.ByteArrayInputStream;
+
 import java.util.Scanner;
 
 public class Tic {
@@ -200,4 +197,21 @@ public class Tic {
 
     return in.nextInt();
   }
+
+  public static void main(String[] args) {
+      
+        do {
+          Tic tic = new Tic();
+          tic.openingGreeting();
+          tic.printBoard();
+
+          while (tic.count < 9 && !tic.isWinner()) {
+            tic.placeMark(getInt());
+            tic.switchPlayer();
+            tic.printBoard();
+          }
+       
+          System.out.println(tic.gameOverMessage());
+        } while(newGame());
+      }
 }
