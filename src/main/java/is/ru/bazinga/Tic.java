@@ -52,12 +52,7 @@ public class Tic {
   }
 
   //message for invalid move, let´s player choose again.
-  public void notValidMove(int place) {
-    System.out.println("Not a valid move, please choose again");
-    placeMark(place);
-  }
-
-  public static void illegalMove() {
+  public static void notValidMove() {
     System.out.println("Not a valid move, please choose again");
   }
 
@@ -66,76 +61,16 @@ public class Tic {
   }
 
    //places players mark on the right place
-  public void placeMark(int place){
+   public void placeMark(int place) {
+    int[] pos = getBoardPosition(place);
 
-    switch(place){
-
-      case 1: if(!isEmpty(0, 0)){
-        notValidMove(place);
-        break;
-      }
-      board[0][0] = player;
+    if(inBounds(pos) && isEmpty(pos[0], pos[1])){
+      board[pos[0]][pos[1]] = player;
       count++;
-      break;
-      case 2: if(!isEmpty(0, 1)){
-        notValidMove(place);
-        break;
-      }
-      board[0][1] = player;
-      count++;
-      break;
-      case 3: if(!isEmpty(0, 2)){
-        notValidMove(place);
-        break;
-      }
-      board[0][2] = player;
-      count++;
-      break;
-      case 4: if(!isEmpty(1, 0)){
-        notValidMove(place);
-        break;
-      }
-      board[1][0] = player;
-      count++;
-      break;
-      case 5: if(!isEmpty(1, 1)){
-        notValidMove(place);
-        break;
-      }
-      board[1][1] = player;
-      count++;
-      break;
-      case 6: if(!isEmpty(1, 2)){
-        notValidMove(place);
-        break;
-      }
-      board[1][2] = player;
-      count++;
-      break;
-      case 7: if(!isEmpty(2, 0)){
-        notValidMove(place);
-        break;
-      }
-      board[2][0] = player;
-      count++;
-      break;
-      case 8: if(!isEmpty(2, 1)){
-        notValidMove(place);
-        break;
-      }board[2][1] = player;
-      count++;
-      break;
-      case 9: if(!isEmpty(2, 2)){
-        notValidMove(place);
-        break;
-      }
-      board[2][2] = player;
-      count++;
-      break;
-      default: notValidMove(place);
-      break;
+      return;
     }
 
+    notValidMove();
   }
 
   public boolean isWinner () {
@@ -260,7 +195,7 @@ public class Tic {
   protected static int getInt() {
     while (!in.hasNextInt()) {
       in.next();
-      illegalMove();
+      notValidMove();
     }
 
     return in.nextInt();
