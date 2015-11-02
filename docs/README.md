@@ -17,3 +17,8 @@ Test:
 ```sh
 $ ./gradlew test
 ```
+
+Run server:
+```sh
+$ ./gradlew run
+```
