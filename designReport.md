@@ -15,10 +15,15 @@ We choose to implement the a simple version of this game. A two player human vs.
 
 The web look is a very simple grid where the players take turns pushing a slot on the grid and X or O appears. Players are welcomed with the text: 
 
+```
 <i>"Tic Tac Toe"</i>
 <i>"--Welcome to a simple game of Tic Tac Toe--" </i>
-
-When for example player x wins , the text <i>"x wins the game!"</i> and a restart button appears. Pushing the restart button refreshes the game and prints out a blank slate grid.
+```
+When for example player x wins, the the game prints out the winner with the text:
+```
+<i>"x wins the game!"</i> 
+````
+and a restart button appears. Pushing the restart button refreshes the game and prints out a blank slate grid.
 
 Code guidelines
 ----------------
