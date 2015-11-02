@@ -15,15 +15,18 @@ We choose to implement the a simple version of this game. A two player human vs.
 
 The web look is a very simple grid where the players take turns pushing a slot on the grid and X or O appears. Players are welcomed with the text: 
 
-```
-"Tic Tac Toe"
-"--Welcome to a simple game of Tic Tac Toe--"
-```
-When for example player x wins, the the game prints out the winner with the text:
-```
-"x wins the game!"
-````
-and a restart button appears. Pushing the restart button refreshes the game and prints out a blank slate grid.
+Inline-style: 
+![alt text](https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/empty.jpg)
+
+When for example player x wins, the the game prints out the winner with the text and the restart button is activated:
+
+Inline-style: 
+![alt text](https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/tie.jpg)
+
+When there is a tie between the players, the tie screen appears and the restart button is activated:
+Inline-style: 
+![alt text](https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/xwins.jpg)
+
 
 Code guidelines
 ----------------
