@@ -24,3 +24,7 @@ jacocoTestReport {
 }
 
 check.dependsOn jacocoTestReport
+
+task stage{
+     dependsOn installDist
+}
