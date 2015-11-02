@@ -13,14 +13,19 @@ About our design
 ----------------
 We choose to implement the a simple version of this game. A two player human vs. human game. As the game develops we thought that we could also implement a human vs. computer game but that feature is not included in this version. The design is simple and user friendly. 
 
-//something about the web look and console look. 
+The web look is a very simple grid where the players take turns pushing a slot on the grid and X or O appears. Players are welcomed with the text: 
+
+<i>"Tic Tac Toe"</i>
+<i>"--Welcome to a simple game of Tic Tac Toe--" </i>
+
+When for example player x wins , the text <i>"x wins the game!"</i> and a restart button appears. Pushing the restart button refreshes the game and prints out a blank slate grid.
 
 Code guidelines
 ----------------
 
-KISS - keep it simple stupid
-DRY - dont repeat yourself
-SSR - single responsability rule
+*KISS - keep it simple stupid
+*DRY - dont repeat yourself
+*SSR - single responsability rule
 
 Brackest should be beside a function and then below the last line in the function. 
 Space before and after each opareator. 
