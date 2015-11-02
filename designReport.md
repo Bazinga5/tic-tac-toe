@@ -21,12 +21,13 @@ The web look is a very simple grid where the players take turns pushing a slot o
 
 When for example player x wins, the the game prints out the winner with the text and the restart button is activated:
 <p align="center">
-<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/tie.jpg"  width="300">
+<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/xwins.jpg"  width="300">
 </p>
 
 When there is a tie between the players, the tie screen appears and the restart button is activated:
 <p align="center">
-<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/xwins.jpg"  width="300">
+<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/tie.jpg"  width="300">
+
 </p>
 
 Code guidelines
