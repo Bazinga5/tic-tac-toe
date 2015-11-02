@@ -12,6 +12,12 @@ public class Web implements SparkApplication {
   public static void main(String[] args) {
     staticFileLocation("/public");
     SparkApplication web = new Web();
+    String port = System.getenv("PORT");
+
+    if (port != null) {
+      port(Integer.valueOf(port));
+    }
+
     web.init();
   }
 
