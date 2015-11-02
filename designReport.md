@@ -16,26 +16,26 @@ We choose to implement the a simple version of this game. A two player human vs.
 The web look is a very simple grid where the players take turns pushing a slot on the grid and X or O appears. Players are welcomed with the text: 
 
 Inline-style:
-<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/empty.jpg"  width="400">
+-><img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/empty.jpg"  width="300"><-
 
 
 When for example player x wins, the the game prints out the winner with the text and the restart button is activated:
 
 Inline-style:
-<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/tie.jpg"  width="400">
+-><img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/tie.jpg"  width="300"><-
 
 When there is a tie between the players, the tie screen appears and the restart button is activated:
 
 Inline-style:
-<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/xwins.jpg"  width="400">
+-><img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/xwins.jpg"  width="300"><-
 
 
 Code guidelines
 ----------------
 
-*KISS - keep it simple stupid
-*DRY - dont repeat yourself
-*SSR - single responsability rule
+* KISS - keep it simple stupid
+* DRY - dont repeat yourself
+* SSR - single responsability rule
 
 Brackest should be beside a function and then below the last line in the function. 
 Space before and after each opareator. 
