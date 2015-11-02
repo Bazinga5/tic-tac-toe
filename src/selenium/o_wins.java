@@ -1,4 +1,4 @@
-package is.ru.bazinga;
+package com.example.tests;
 
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
@@ -26,13 +26,17 @@ public class OWins {
   public void testOWins() throws Exception {
     // o_wins
     driver.get(baseUrl + "/");
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[1]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[2]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[3]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[2]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[1]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td[2]")).click();
-    driver.findElement(By.cssSelector("#game__restart")).click();
+    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | //table[@id='board']/tbody/tr[1]/td[1] | ]]
+    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | //table[@id='board']/tbody/tr[1]/td[2] | ]]
+    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | //table[@id='board']/tbody/tr[1]/td[3] | ]]
+    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | //table[@id='board']/tbody/tr[2]/td[2] | ]]
+    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | //table[@id='board']/tbody/tr[2]/td[1] | ]]
+    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | //table[@id='board']/tbody/tr[3]/td[2] | ]]
+    try {
+      assertEquals("o wins this game!", driver.findElement(By.id("game__message")).getText());
+    } catch (Error e) {
+      verificationErrors.append(e.toString());
+    }
   }
 
   @After
