@@ -45,3 +45,15 @@ The game can now be built using the command:
 ```
 ./gradlew build
 ```
+
+Heroku
+------------
+Heroku is a cloud platform that lets companies build, deliver, monitor and scale apps. Heroku puts an app you've developed on the Internet for others to use. 
+
+Something about Travis+Selenium=howItWorks
+
+Selenium
+-------------
+Selenium provides a record/playback tool for authoring tests without learning a test scripting language (Selenium IDE). Tests are saved in .html form and then exported to .java. Travis will then automatically run the selenium tests. The Firefox browser is needed (we use version 41.0.2) for the Selenum IDE to be integrated. 
+
+Something about Travis+Selenium=howItWorks
