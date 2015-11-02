@@ -24,6 +24,18 @@ $(function() {
 	Game.prototype.updateCell = function(data) {
 		this.state_ = JSON.parse(data);
 		this.currentCell_.text(this.state_.player);
+
+		if (this.state_.status === 1) {
+			this.gameOver();
+		} else if (this.state_.status === 2) {
+			this.message_.addClass('game__message_tie');
+			this.gameOver();
+		}
+	};
+
+	Game.prototype.gameOver = function() {
+		this.message_.html(this.state_.message);
+		this.restart_.show();
 	};
 
 	Game.prototype.handleGameMove =	function(event) {
