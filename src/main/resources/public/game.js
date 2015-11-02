@@ -28,6 +28,11 @@ $(function() {
 
 	Game.prototype.handleGameMove =	function(event) {
 		var cell = $(event.target);
+
+		if (cell.text().length) {
+			return;
+		}
+
 		this.currentCell_ = cell;
 
 		$.post(MOVE_URL_, {move: this.currentCell_.data('col')})
