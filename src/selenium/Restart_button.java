@@ -9,7 +9,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class OWins {
+public class RestartButton {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -23,8 +23,8 @@ public class OWins {
   }
 
   @Test
-  public void testOWins() throws Exception {
-    // o_wins
+  public void testRestartButton() throws Exception {
+    // Restart button
     driver.get(baseUrl + "/");
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[1]")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[2]")).click();
@@ -32,8 +32,11 @@ public class OWins {
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[2]")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[1]")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td[2]")).click();
+    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | null | ]]
+    driver.findElement(By.id("game__restart")).click();
+    // Warning: verifyTextNotPresent may require manual changes
     try {
-      assertEquals("o wins this game!", driver.findElement(By.id("game__message")).getText());
+      assertFalse(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*//table\\[@id='board'\\]/tbody/tr\\[1\\]/td\\[1\\][\\s\\S]*$"));
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }

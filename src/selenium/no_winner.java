@@ -35,7 +35,11 @@ public class NoWinner {
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[3]")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td[1]")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[2]")).click();
-    driver.findElement(By.id("game__restart")).click();
+    try {
+      assertEquals("Everyone is a looser!", driver.findElement(By.id("game__message")).getText());
+    } catch (Error e) {
+      verificationErrors.append(e.toString());
+    }
   }
 
   @After

@@ -31,7 +31,11 @@ public class XWins {
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[1]")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[1]")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[3]")).click();
-    driver.findElement(By.id("game__restart")).click();
+    try {
+      assertEquals("x wins this game!", driver.findElement(By.id("game__message")).getText());
+    } catch (Error e) {
+      verificationErrors.append(e.toString());
+    }
   }
 
   @After
