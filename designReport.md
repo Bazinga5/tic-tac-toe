@@ -30,7 +30,9 @@ Indent should be used. (find better decription)
 We are using Camel casing for functions and variables. 
 Wer are using Pascal casing for classes.
 
-//Something about pairprogramming.
+Pair Programming
+------------------
+We plan to implement the XP methodology "pair programming" quite a bit for this project. Pair programming tends to produce higher quality design, everybody gains a working knowldedge of the entire codebase and the pair is more likely to "do the right thing".
 
 GitHub rules
 ----------------
