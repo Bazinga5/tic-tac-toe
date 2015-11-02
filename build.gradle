@@ -4,10 +4,12 @@ apply plugin: 'application'
 mainClassName = "is.ru.bazinga.Web"
 
 repositories {
+    mavenCentral()
     jcenter()
 }
 
 dependencies {
+    compile 'com.google.code.gson:gson:2.2.4'
     compile 'org.slf4j:slf4j-api:1.7.12'
     testCompile 'junit:junit:4.12'
     compile 'com.sparkjava:spark-core:2.3'
