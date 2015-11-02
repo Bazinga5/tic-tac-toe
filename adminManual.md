@@ -3,7 +3,7 @@ Admin Manual
 
 Java JDK
 ---------
-Make shure you have Java JDK 8 instald on you machine.
+Make sure you have Java JDK 8 installed on the target machine.
 
 GitHub
 ---------
