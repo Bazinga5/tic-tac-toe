@@ -20,5 +20,30 @@ public class Web implements SparkApplication {
     post("/new-game", (req, res) -> {
       game = new Tic();
       return true;
+    });
+
+    post("/player-move", (req, res) -> {
+      WebDTO dto = new WebDTO();
+
+      int move = Integer.parseInt(req.queryParams("move"));
+      char player = game.player;
+      game.placeMark(move);
+
+      dto.player = player;
+
+      if (game.isWinner()) {
+        dto.status = 1;
+        dto.message = player + " wins this game!";
+      } else if (game.count >= 9) {
+        dto.status = 2;
+        dto.message = "Everyone is a looser!";
+      } else {
+        dto.status = 0;
+        dto.message = "";
+        game.switchPlayer();
+      }
+
+      return gson.toJson(dto);
+    });
   }
 }
