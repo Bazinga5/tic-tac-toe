@@ -15,6 +15,11 @@ We choose to implement the a simple version of this game. A two player human vs.
 
 The web look is a very simple grid where the players take turns pushing a slot on the grid and X or O appears. Players are welcomed with the text: 
 
+Fyrri:
+Inline-style:
+<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/empty.jpg"  width="100x">
+
+seinni:
 Inline-style: 
 ![alt text](https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/empty.jpg)
 
