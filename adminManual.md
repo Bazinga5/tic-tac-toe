@@ -20,4 +20,6 @@ How to install gradle and run builds
 
 Heroku
 -----------
+```
 https://bazinga-tictactoe.herokuapp.com/
+```
