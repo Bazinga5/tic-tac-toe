@@ -15,20 +15,22 @@ We choose to implement the a simple version of this game. A two player human vs.
 
 The web look is a very simple grid where the players take turns pushing a slot on the grid and X or O appears. Players are welcomed with the text: 
 
+<p align="center">
 Inline-style:
--><img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/empty.jpg"  width="300"><-
-
+<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/empty.jpg"  width="300">
+</p>
 
 When for example player x wins, the the game prints out the winner with the text and the restart button is activated:
-
+<p align="center">
 Inline-style:
--><img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/tie.jpg"  width="300"><-
+<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/tie.jpg"  width="300">
+</p>
 
 When there is a tie between the players, the tie screen appears and the restart button is activated:
-
+<p align="center">
 Inline-style:
--><img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/xwins.jpg"  width="300"><-
-
+<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/xwins.jpg"  width="300">
+</p>
 
 Code guidelines
 ----------------
