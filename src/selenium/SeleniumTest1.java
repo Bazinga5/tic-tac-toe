@@ -1,4 +1,4 @@
-package com.example.tests;
+package is.ru.bazinga;
 
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
@@ -22,6 +22,7 @@ public class SeleniumTest1 {
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
+  //Testing a normal game of tic-tac-toe
   @Test
   public void testSeleniumTest1() throws Exception {
     driver.get(baseUrl + "/");

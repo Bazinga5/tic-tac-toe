@@ -27,6 +27,7 @@ public class TicTest {
     assertEquals('x', tic.switchPlayer());
   }
 
+  //checks if desired position is empty
   @Test
   public void testIsEmpty() {
     Tic tic = new Tic();
@@ -36,6 +37,7 @@ public class TicTest {
     assertEquals(true, tic.isEmpty(2,1));
   }
 
+  //does the mark end up in the right position
   @Test
   public void testPlaceMark() {
     Tic tic = new Tic();
@@ -74,14 +76,14 @@ public class TicTest {
   
     assertEquals(true, tic.isWinner());
 
-    // Check a line that goes across
+    // Check a line that goes diagonally
     tic.board[0][0] = 'x';
     tic.board[1][1] = 'x';
     tic.board[2][2] = 'x';
   
     assertEquals(true, tic.isWinner());
 
-    // Check the other line that goes across
+    // Check the other line that goes diagonally
     tic.board[0][2] = 'x';
     tic.board[1][1] = 'x';
     tic.board[2][0] = 'x';
@@ -103,6 +105,7 @@ public class TicTest {
     assertArrayEquals(new int[]{-1,-1}, Tic.getBoardPosition(10));
   }
 
+  //checks if position is leagal or not
   @Test
   public void testInBounds() {
     int position[] = new int[2];

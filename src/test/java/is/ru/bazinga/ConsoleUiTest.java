@@ -25,6 +25,7 @@ public class ConsoleUiTest{
     assertEquals(true, ConsoleUi.playAgain());
    }
 
+   //checks if player puts int.
   @Test
   public void testGetInt() {
     ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
@@ -34,6 +35,7 @@ public class ConsoleUiTest{
     assertEquals(1, ConsoleUi.getInt());
   }
 
+  //checks if player puts in char
   @Test
   public void testGetChar() {
     ByteArrayInputStream in = new ByteArrayInputStream("y".getBytes());

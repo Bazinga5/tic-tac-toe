@@ -33,6 +33,7 @@ public class ConsoleUi extends Tic {
 		System.out.println("May the force be with you.");
 	}
 
+	//Writes out who is the winner or if there is a tie.
 	protected String gameOverMessage() {
 		if (count < 9) {
 			switchPlayer();
@@ -41,6 +42,8 @@ public class ConsoleUi extends Tic {
 			return "Tie!";
 		}
 	}
+
+	//When players are offered to play a new game, reads in char.
 	protected static char getChar() {
 		char c = '\0';
 
@@ -51,6 +54,7 @@ public class ConsoleUi extends Tic {
 		return c;
 	}
 
+	//Needed to read int for console, where player´s going to place his mark.
 	protected static int getInt() {
 		while (!in.hasNextInt()) {
 			in.next();
@@ -60,6 +64,7 @@ public class ConsoleUi extends Tic {
 		return in.nextInt();
 	}
         
+    //Needed due to inheritance.
 	@Override
 	protected void gameOver() {
 		System.out.println(gameOverMessage());

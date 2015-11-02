@@ -46,6 +46,7 @@ public class Tic {
     return false;
   }
 
+  //checks if mark is placed inside grid
   public static boolean inBounds(int[] pos) {
     return pos[0] < 4 && pos[1] < 4 && pos[0] >= 0 && pos[1] >= 0;
   }
@@ -61,6 +62,7 @@ public class Tic {
     }
   }
 
+  //checks for all possible winning combinations, vertical, horizontal or diagonally
   public boolean isWinner () {
 
     for (int i = 0 ; i < ROWS ; i++){
@@ -90,6 +92,7 @@ public class Tic {
     return false;
   }
 
+  //places mark at the right grid of board
   public static int[] getBoardPosition(int place) {
     int[] position = new int[2];
 
@@ -139,6 +142,7 @@ public class Tic {
     return position;
   }
 
+  //Needed due to possibility to override in ConsoleUI
   protected void greet() {}
   protected void display() {}
   protected void gameOver() {}
@@ -147,6 +151,7 @@ public class Tic {
     return currentMove;
   }
 
+  //runs the game, sets a new game
   protected static void startGame() {
     Tic game = new Tic();
     game.greet();
