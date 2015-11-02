@@ -37,8 +37,7 @@ Space before and after each opareator.
 Space after for, while, if and similar statements. 
 Comments should be placed above functions but not below. 
 Indent should be used. (find better decription)
-We are using Camel casing for functions and variables. 
-Wer are using Pascal casing for classes.
+We are using Camel casing for functions and variables and Pascal casing for classes.
 
 Pair Programming
 ------------------
