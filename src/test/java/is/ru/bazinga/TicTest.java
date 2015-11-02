@@ -60,17 +60,47 @@ public class TicTest {
   public void testIsWinner() {
     Tic tic = new Tic();
 
+    //Check a horizontal line 
     tic.board[0][0] = 'x';
     tic.board[0][1] = 'x';
     tic.board[0][2] = 'x';
   
     assertEquals(true, tic.isWinner()); 
+
+    // Check a vertical line
+    tic.board[0][0] = 'x';
+    tic.board[1][0] = 'x';
+    tic.board[2][0] = 'x';
+  
+    assertEquals(true, tic.isWinner());
+
+    // Check a line that goes across
+    tic.board[0][0] = 'x';
+    tic.board[1][1] = 'x';
+    tic.board[2][2] = 'x';
+  
+    assertEquals(true, tic.isWinner());
+
+    // Check the other line that goes across
+    tic.board[0][2] = 'x';
+    tic.board[1][1] = 'x';
+    tic.board[2][0] = 'x';
+  
+    assertEquals(true, tic.isWinner());
   }
   
   @Test
   public void getBoardPos() {
     assertArrayEquals(new int[]{0,0}, Tic.getBoardPosition(1));
+    assertArrayEquals(new int[]{0,1}, Tic.getBoardPosition(2));
+    assertArrayEquals(new int[]{0,2}, Tic.getBoardPosition(3));
+    assertArrayEquals(new int[]{1,0}, Tic.getBoardPosition(4));
+    assertArrayEquals(new int[]{1,1}, Tic.getBoardPosition(5));
+    assertArrayEquals(new int[]{1,2}, Tic.getBoardPosition(6));
+    assertArrayEquals(new int[]{2,0}, Tic.getBoardPosition(7));
+    assertArrayEquals(new int[]{2,1}, Tic.getBoardPosition(8));
     assertArrayEquals(new int[]{2,2}, Tic.getBoardPosition(9));
+    assertArrayEquals(new int[]{-1,-1}, Tic.getBoardPosition(10));
   }
 
   @Test
