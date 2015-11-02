@@ -27,12 +27,12 @@ public class SeleniumTest1 {
   public void testSeleniumTest1() throws Exception {
     driver.get(baseUrl + "/");
     driver.findElement(By.cssSelector("td")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[2]")).click();
+    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[1]")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td[3]")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[3]")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr/td[2]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td")).click();
+    //driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td")).click();
     driver.findElement(By.id("game__restart")).click();
   }
 
