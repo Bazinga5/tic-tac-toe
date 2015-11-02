@@ -26,15 +26,15 @@ public class NoWinner {
   public void testNoWinner() throws Exception {
     // No winner
     driver.get(baseUrl + "/");
-    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | //table[@id='board']/tbody/tr[2]/td[2] | ]]
-    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | //table[@id='board']/tbody/tr[3]/td[2] | ]]
-    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | //table[@id='board']/tbody/tr[2]/td[1] | ]]
-    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | //table[@id='board']/tbody/tr[1]/td[1] | ]]
-    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | //table[@id='board']/tbody/tr[3]/td[3] | ]]
-    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | //table[@id='board']/tbody/tr[2]/td[3] | ]]
-    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | //table[@id='board']/tbody/tr[1]/td[3] | ]]
-    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | //table[@id='board']/tbody/tr[3]/td[1] | ]]
-    // ERROR: Caught exception [ERROR: Unsupported command [clickAt | //table[@id='board']/tbody/tr[1]/td[2] | ]]
+    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[2]")).click();
+    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td[2]")).click();
+    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[1]")).click();
+    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[1]")).click();
+    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td[3]")).click();
+    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[3]")).click();
+    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[3]")).click();
+    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td[1]")).click();
+    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[2]")).click();
     driver.findElement(By.id("game__restart")).click();
   }
 
