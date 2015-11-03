@@ -18,7 +18,7 @@ $(function() {
 	Game.prototype.createBoard = function() {
 		this.board_ = $(this.boardTemplate_);
 		this.outlet_.html(this.board_);
-		this.board_.on('click', 'td', this.handleGameMove.bind(this));
+		this.board_.on('click', 'a', this.handleGameMove.bind(this));
 	};
 
 	Game.prototype.updateCell = function(data) {
@@ -47,7 +47,7 @@ $(function() {
 
 		this.currentCell_ = cell;
 
-		$.post(MOVE_URL_, {move: this.currentCell_.data('col')})
+		$.post(MOVE_URL_, {move: this.currentCell_.parent().data('col')})
 			.done(this.updateCell.bind(this));
 	};
 
