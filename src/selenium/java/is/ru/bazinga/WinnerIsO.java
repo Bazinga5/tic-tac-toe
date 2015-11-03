@@ -19,7 +19,6 @@ public class WinnerIsO {
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
     baseUrl = "http://bazinga-tictactoe.herokuapp.com";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
   @Test
