@@ -58,8 +58,12 @@ Nothing will be merged with the master unless it workes on the feature branch, G
 
 Classes
 ----------------
-We started to work the assignment in one class. We addded one and one function to the class until we had all the functions that we thought we needed. Then we analysed each function and sorted them into two classes, ConsoleUI and TicTacToe. ConsoleUI is used for functions that "talk" to the console, either get inputs from the console or write something to the console. TicTacToe is used for the functions that then use the input from the functions from ConsoleUI.
+We started to work the assignment in one class. We kept adding functions to the class until we believed we had covered all issues. We then analysed each function and sorted them into two classes, ConsoleUI and TicTacToe. ConsoleUI is used for functions that "talk" to the console, either they get inputs from the console or write something to the console. TicTacToe is used for the functions that then use the input from the functions from ConsoleUI.
 
 Final class diagram
 ----------------
-//picture of diagram
+
+
+<p align="center">
+<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/diagram.jpg"  width="600">
+</p>
