@@ -42,14 +42,28 @@ task stage {
      dependsOn installDist
 }
 
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
+
+task selenium(type: Test, dependsOn: installDist) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+}
+
 task seleniumXvfb(type: Test, dependsOn: installDist) {
     testClassesDir = sourceSets.selenium.output.classesDir
     classpath = sourceSets.selenium.runtimeClasspath
+
     environment "DISPLAY", ":99"
+
     doFirst {
         'bin/xvfb start'.execute()
-	'build/install/tic-tac-toe/bin/tic-tac-toe &'.execute()
+    	'build/install/tic-tac-toe/bin/tic-tac-toe &'.execute()
     }
+
     doLast {
         'sh -e /etc/init.d/xvfb stop'.execute()
     }

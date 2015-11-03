@@ -9,7 +9,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class OWins {
+public class TwoMoves {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -18,22 +18,39 @@ public class OWins {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "http://bazinga-tictactoe.herokuapp.com/";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    baseUrl = "http://bazinga-tictactoe.herokuapp.com";
   }
 
   @Test
-  public void testOWins() throws Exception {
-    // o_wins
+  public void testTwoMoves() throws Exception {
     driver.get(baseUrl + "/");
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[1]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[2]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[3]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[2]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[1]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td[2]")).click();
+    for (int second = 0;; second++) {
+    	if (second >= 60) fail("timeout");
+    	try { if (isElementPresent(By.xpath("//div[@id='game__outlet']/table[@id='board']"))) break; } catch (Exception e) {}
+    	Thread.sleep(1000);
+    }
+
+    driver.findElement(By.xpath("//div[@id='game__outlet']/table[@id='board']/tbody/tr[2]/td/a")).click();
+    for (int second = 0;; second++) {
+    	if (second >= 60) fail("timeout");
+    	try { if (!isElementPresent(By.cssSelector(".is_loading"))) break; } catch (Exception e) {}
+    	Thread.sleep(1000);
+    }
+
     try {
-      assertEquals("o wins this game!", driver.findElement(By.id("game__message")).getText());
+      assertEquals("x", driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td/a")).getText());
+    } catch (Error e) {
+      verificationErrors.append(e.toString());
+    }
+    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td[2]/a")).click();
+    for (int second = 0;; second++) {
+    	if (second >= 60) fail("timeout");
+    	try { if (!isElementPresent(By.cssSelector(".is_loading"))) break; } catch (Exception e) {}
+    	Thread.sleep(1000);
+    }
+
+    try {
+      assertEquals("o", driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td[2]/a")).getText());
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
