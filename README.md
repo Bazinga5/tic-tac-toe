@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Bazinga5/tic-tac-toe.png)](https://travis-ci.org/Bazinga5/tic-tac-toe)
+[![Build Status](https://travis-ci.org/Bazinga5/tic-tac-toe.png)](https://travis-ci.org/Bazinga5/tic-tac-toe) [![Codecov](https://img.shields.io/codecov/c/github/bazinga5/tic-tac-toe.svg)](https://codecov.io/github/Bazinga5/tic-tac-toe)
 
 # Tic
 
