@@ -9,7 +9,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class SeleniumTest1 {
+public class XWins {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -18,22 +18,24 @@ public class SeleniumTest1 {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "http://localhost:4567/";
+    baseUrl = "http://localhost:4567";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
-  //Testing a normal game of tic-tac-toe
   @Test
-  public void testSeleniumTest1() throws Exception {
+  public void testXWins() throws Exception {
+    // x wins
     driver.get(baseUrl + "/");
-    driver.findElement(By.cssSelector("td")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[2]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td[3]")).click();
+    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td[2]")).click();
+    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[1]")).click();
+    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[1]")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[3]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr/td[2]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td")).click();
-    driver.findElement(By.id("game__restart")).click();
+    try {
+      assertEquals("x wins this game!", driver.findElement(By.id("game__message")).getText());
+    } catch (Error e) {
+      verificationErrors.append(e.toString());
+    }
   }
 
   @After

@@ -9,7 +9,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class RestartButton {
+public class OWins {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -18,25 +18,22 @@ public class RestartButton {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "http://bazinga-tictactoe.herokuapp.com/";
+    baseUrl = "http://localhost:4567";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
   @Test
-  public void testRestartButton() throws Exception {
-    // Restart button
-    driver.get(baseUrl + "/");
+  public void testOWins() throws Exception {
+    // o_wins
+    driver.get(baseUrl);
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[1]")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[2]")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[3]")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[2]")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[1]")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td[2]")).click();
-    // ERROR: Caught exception [ERROR: Unsupported command [selectWindow | null | ]]
-    driver.findElement(By.id("game__restart")).click();
-    // Warning: verifyTextNotPresent may require manual changes
     try {
-      assertFalse(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*//table\\[@id='board'\\]/tbody/tr\\[1\\]/td\\[1\\][\\s\\S]*$"));
+      assertEquals("o wins this game!", driver.findElement(By.id("game__message")).getText());
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }

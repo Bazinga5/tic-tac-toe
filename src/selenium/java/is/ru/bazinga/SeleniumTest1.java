@@ -9,7 +9,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class OWins {
+public class SeleniumTest1 {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -18,22 +18,17 @@ public class OWins {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "http://bazinga-tictactoe.herokuapp.com/";
+    baseUrl = "http://localhost:4567";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
   @Test
-  public void testOWins() throws Exception {
-    // o_wins
+  public void testO() throws Exception {
     driver.get(baseUrl + "/");
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[1]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[2]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[1]/td[3]")).click();
+    driver.findElement(By.cssSelector("td")).click();
     driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[2]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[1]")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td[2]")).click();
     try {
-      assertEquals("o wins this game!", driver.findElement(By.id("game__message")).getText());
+      assertEquals("o", driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[2]")).getText());
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
