@@ -14,6 +14,7 @@ Since the game is a web app nothing has to be setup at the clients side. The cli
 
 ```
 http://bazinga-tictactoe.herokuapp.com/
+```
 
 You can also run the game locally on a computer. First clone the repo into you computer with: 
 
