@@ -1,4 +1,4 @@
-Development Manual
+Administration Manual
 ========================
 
 Instructions for setup
