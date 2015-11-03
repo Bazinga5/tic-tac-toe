@@ -1,4 +1,4 @@
-Administration manual
+Administration Manual
 ========================
 
 For first time run please refer to the development manual:
