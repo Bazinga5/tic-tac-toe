@@ -2,11 +2,14 @@ language: java
 jdk:
 - oraclejdk8
 before_install:
-  - pip install --user codecov
+- pip install --user codecov
 after_success:
-  - codecov
-script: ./bin/deploy.sh
+- codecov
+script: "./bin/deploy.sh"
 env:
   global:
   - GH_REF: github.com/bazinga5/tic-tac-toe.git
   - secure: AqXziFye03k+xvdilPlW+UOqsILe/h2FgB3qzB9TzE7nw+CtM8a/opmJkcEN1cvzvhNvb9jHqkk3shFSxp++7dlerRVdTiWIao6OJ4R2ptVoJCzBVWah9h9mBDIOpRMFEIEp3PetBIYv8SouzoBsBS5PIrXIuJJpYQl13KGTGWwlcSeiTCOGmJadvovwV6RDje/O8FPYdmFkTcO8cRj+UahZFx4yBKTgEh/AYP/SFgeVAm1cBkQuOUjKJV11bRHHyX9llt36L0Q1ZY3SLPjlWwHozk5GyFBrRXD/G27sjVLlhTI1qzmx1pRmYW6Lrt6GA1glc2DkkD1ezb/FlkVb2E3no709fd8pPTiAtaWdMBd/inkmczaL1G0S9e1usmtGsonU+i9NLQ51995BXRmhvEP/XdmXMPJ05Xdcqogpu9WAlxad/H/RoPmChGVzN5YEqMlkQufFxq0ZR3Cem+rM4nRQqXGTocJjRPr7qmxDB9yFwXzuBxvE1jGuUfz7Bm8tmqtpZG/uwekidpjWBPpUI6c61HZ8OVkywE/8tuz/IRusL5GdebrsHwvZDPEDG3QQ0TSGao6N8erTiUv2xaQG7GkAm9qWflOPSZjUGYowM9YnADa0Pt6biB6m6vDKdDIt159vdZodx3oUJhw8wrb0qjOcZTlQpOi2fW7eNsgoOpI=
+  - secure: AKHKINpuc/MXSdZvH6Lgqy87GiJ+ggtl9afFGLmxAs0gux4KeM83hGXRvRU5rD7oaRpDuXla26n+4OnvNQIRaaTJKY6QRwsCNdRxNGVjgG9BkRfMIvT8PaimK5x5prBZrjIsyya7VGrlCrW1Dxn8RpQn0vKrzQ5XdUGgN3Jk+eLi26W2tciaPGV15S9oHlK8HH5GAbDfqviGicvOmO+pf3AtRL26nkARd+TaF61+w5HP/etlrpdgYHlHYb0roqYWgCcCThNIAvJG8m4uTPaAtZ658npyzgWUFP0y+I0EOY7F4sgrhasz1gD+joa/lPERuZLTuNI4f+xs5fAYprw377fieYQ/ISZZTjwrLZFfr64BMXeIZJwuGbjZwnQrrVwDUrpfbl+Hj1ygLaUxOdgpPU/m+Hx5RhDmFkF9MR5nd7zQd914NRTV8A5B2oPIPBUPNhI+D2yx/715Qngb4JqedJr/zYVU3jwTopOA/5nOOiLoM39al0XLo44hmdbgTBXmQ75CP/a0CtRBBSAXOhfbL+XWjW68QSUaxXKuu8FfgExNwcE/D6RNoq+et6eLvpmOdscfPXpunwFQGsbbARaSkPwuOC2Sqz6upI8DitPzf6Da83ZCQtonsUgirR1Nh7QjdLT82PmhEdCLYaPe/0so07/X61cOAq1+OSg3jHVeB18=
+addons:
+  sauce_connect: true
