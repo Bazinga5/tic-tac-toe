@@ -19,11 +19,7 @@ Comments should be placed above functions but not below.
 Indent should be used properly.
 Use Camel casing for functions and variables and Pascal casing for classes.
 
-Pair Programming
-------------------
-We use the XP methodology "pair programming". Pair programming tends to produce higher quality design, everybody gains a working knowldedge of the entire codebase and the pair is more likely to "do the right thing".
-
-GitHub rules
+Git rules
 ----------------
 The person who pushed somehing into the master is not the person to merge  when pushing code. A new branch should be created when working on each feature and then deleted when it has been merged with the master. 
 All small changes should be pushed/commited when they are ready. 
@@ -47,9 +43,6 @@ Run server:
 $ ./gradlew run
 ```
 
-//segja hvernig við vinnum verkefnið
-//nýr forritari, hvað þarf hann að vita
-//hvernig við vinnum
 
 /*Instructions for setup
 ---------------------------
