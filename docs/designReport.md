@@ -15,22 +15,27 @@ We choose to implement the a simple version of this game. A two player human vs.
 
 The web look is a very simple grid where the players take turns pushing a slot on the grid and X or O appears. Players are welcomed with the text: 
 
-```
-"Tic Tac Toe"
-"--Welcome to a simple game of Tic Tac Toe--"
-```
-When for example player x wins, the the game prints out the winner with the text:
-```
-"x wins the game!"
-````
-and a restart button appears. Pushing the restart button refreshes the game and prints out a blank slate grid.
+<p align="center">
+<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/empty.jpg"  width="300">
+</p>
+
+When for example player x wins, the the game prints out the winner with the text and the restart button is activated:
+<p align="center">
+<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/xwins.jpg"  width="300">
+</p>
+
+When there is a tie between the players, the tie screen appears and the restart button is activated:
+<p align="center">
+<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/tie.jpg"  width="300">
+
+</p>
 
 Code guidelines
 ----------------
 
-*KISS - keep it simple stupid
-*DRY - dont repeat yourself
-*SSR - single responsability rule
+* KISS - keep it simple stupid
+* DRY - dont repeat yourself
+* SSR - single responsability rule
 
 Brackest should be beside a function and then below the last line in the function. 
 Space before and after each opareator. 
@@ -53,8 +58,12 @@ Nothing will be merged with the master unless it workes on the feature branch, G
 
 Classes
 ----------------
-We started to work the assignment in one class. We addded one and one function to the class until we had all the functions that we thought we needed. Then we analysed each function and sorted them into two classes, ConsoleUI and TicTacToe. ConsoleUI is used for functions that "talk" to the console, either get inputs from the console or write something to the console. TicTacToe is used for the functions that then use the input from the functions from ConsoleUI.
+We started to work the assignment in one class. We kept adding functions to the class until we believed we had covered all issues. We then analysed each function and sorted them into two classes, ConsoleUI and TicTacToe. ConsoleUI is used for functions that "talk" to the console, either they get inputs from the console or write something to the console. TicTacToe is used for the functions that then use the input from the functions from ConsoleUI.
 
 Final class diagram
 ----------------
-//picture of diagram
+
+
+<p align="center">
+<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/diagram.jpg"  width="450">
+</p>
