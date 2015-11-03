@@ -38,7 +38,7 @@ jacocoTestReport {
 
 check.dependsOn jacocoTestReport
 
-task stage{
+task stage {
      dependsOn installDist
 }
 
