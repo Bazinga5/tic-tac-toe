@@ -6,7 +6,7 @@ if [ $TRAVIS_BRANCH == 'master' ]; then
   set -e
 
   # run compile script
-  ./gradlew test
+  ./gradlew check
 
   cd build/reports/tests
   git init
