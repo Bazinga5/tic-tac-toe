@@ -8,16 +8,28 @@ $(function() {
 		this.message_ = $('#game__message');
 		this.restart_ = $('#game__restart');
 		this.outlet_ = $('#game__outlet');
+		this.loadingTemplate_ = $('<i class="is_loading"></i>');
 		this.newGame();
 	}
 
+	Game.prototype.startLoading_ = function() {
+		this.loading_ = this.loadingTemplate_.clone().prependTo('body');
+	};
+
+	Game.prototype.endLoading_ = function() {
+		this.loading_.remove();
+		this.loading_ = null;
+	};
+
 	Game.prototype.newGame = function() {
+		this.startLoading_();
 		return $.post(NEW_GAME_URL_).done(this.createBoard.bind(this));
 	};
 
 	Game.prototype.createBoard = function() {
 		this.board_ = $(this.boardTemplate_);
 		this.outlet_.html(this.board_);
+		this.endLoading_();
 		this.board_.on('click', 'a', this.handleGameMove.bind(this));
 	};
 
@@ -31,6 +43,8 @@ $(function() {
 			this.message_.addClass('game__message_tie');
 			this.gameOver();
 		}
+
+		this.endLoading_();
 	};
 
 	Game.prototype.gameOver = function() {
@@ -41,11 +55,12 @@ $(function() {
 	Game.prototype.handleGameMove =	function(event) {
 		var cell = $(event.target);
 
-		if (cell.text().length) {
+		if (this.loading_ || cell.text().length) {
 			return;
 		}
 
 		this.currentCell_ = cell;
+		this.startLoading_();
 
 		$.post(MOVE_URL_, {move: this.currentCell_.parent().data('col')})
 			.done(this.updateCell.bind(this));

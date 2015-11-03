@@ -4,9 +4,33 @@
   <meta charset="utf-8"/>
   <title>Tic Tac Toe</title>
   <style>
+    @-webkit-keyframes loading {
+      0% {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes loading {
+      0% {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
     * {
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
       box-sizing: border-box;
       color: inherit;
       font-weight: 100;
@@ -19,7 +43,7 @@
       font-size: 16px;
       line-height: 1.3;
     }
-    
+
     table, th, td {
       border: none;
       border-collapse: collapse;
@@ -78,8 +102,6 @@
 
     .game__restart {
       background: #e8e8e8;
-      -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
-      -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
       box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
       color: #565656;
       font-size: 16px;
@@ -89,6 +111,22 @@
       letter-spacing: 2px;
       text-decoration: none;
       text-transform: uppercase;
+    }
+
+    .is_loading {
+      -webkit-animation: loading;
+      animation: loading;
+      -webkit-animation-duration: .5s;
+      animation-duration: .5s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      background: #1d466f;
+      height: 20px;
+      left: 24px;
+      position: absolute;
+      top: 24px;
+      width: 20px;
+      z-index: 1;
     }
   </style>
 </head>
