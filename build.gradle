@@ -2,6 +2,10 @@ apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: "jacoco"
 
+version = '1.0.0'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 mainClassName = "is.ru.bazinga.Web"
 
 repositories {
@@ -12,7 +16,7 @@ repositories {
 sourceSets {
  selenium
  seleniumXvfb
- }
+}
 
 dependencies {
     compile 'com.google.code.gson:gson:2.2.4'
