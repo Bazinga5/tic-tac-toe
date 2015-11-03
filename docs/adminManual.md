@@ -3,9 +3,7 @@ Admin Manual
 
 Java JDK
 ---------
-
-how to get java jdk blablabla
-
+Make sure you have Java JDK 8 installed on the target machine.
 
 GitHub
 ---------
