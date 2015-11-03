@@ -1,10 +1,6 @@
 Development Manual
 ========================
 
-/*Development manual, that is, what is needed and how to get the
-project to build on a fresh machine
-Source control client and access to source control*/
-
 
 Code rules
 ----------------
@@ -12,7 +8,7 @@ Code rules
 * DRY - dont repeat yourself
 * SSR - single responsability rule
 
-Brackest should be beside a function and then below the last line in the function. 
+Braces should be after a function and then below the last line of the function. 
 Space before and after each opareator. 
 Space after for, while, if and similar statements. 
 Comments should be placed above functions but not below. 
@@ -21,32 +17,16 @@ Use Camel casing for functions and variables and Pascal casing for classes.
 
 Git rules
 ----------------
-The person who pushed somehing into the master is not the person to merge  when pushing code. A new branch should be created when working on each feature and then deleted when it has been merged with the master. 
+A person who creates a pull request can not merge it herself. 
+A new branch should be created when working on each feature and then deleted when it has been merged with the master. 
 All small changes should be pushed/commited when they are ready. 
-You should try to minimum or avoid pushing something from the branch master. 
-Nothing will be merged with the master unless it workes on the feature branch, Gradle and Travis  .... (more detail needed).
-
-## Usage:
-
-Build:
-```sh
-$ ./gradlew build
-```
-
-Test:
-```sh
-$ ./gradlew test
-```
-
-Run server:
-```sh
-$ ./gradlew run
-```
+Pushing something directly to the master branch should be avoided at all cost.
+Nothing will be merged with the master unless it workes on the feature branch, Gradle and Travis.
 
 
-/*Instructions for setup
+Instructions for setup
 ---------------------------
-This project was built in an UNIX environment so the manual reflects that fact. */
+This project was built in an UNIX environment so the manual reflects that fact. 
 
 
 The Java JDK developer kit
@@ -84,9 +64,20 @@ Please verify the version of gradle with the command:
 ```
 java --version
 ```
-The game can now be built using the command:
+
+Build:
+```sh
+$ ./gradlew build
 ```
-./gradlew build
+
+Test:
+```sh
+$ ./gradlew test
+```
+
+Run server:
+```sh
+$ ./gradlew run
 ```
 
 Heroku
@@ -100,7 +91,7 @@ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 ```
 
 
-For every push to master a build to Travis is staged. Travis checks the unit tests and then checks the end-to-end tests with Selenium. If Travis gives the green light on the tests the GAME?? is deployed on Heroku. 
+For every pull request a build to Travis is staged. Travis checks the build and unit tests. If Travis gives the green light on the tests the code is deployed on Heroku. 
 
 Selenium
 -------------

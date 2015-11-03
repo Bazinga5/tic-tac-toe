@@ -21,7 +21,13 @@ You can also run the game locally on a computer. First clone the repo into you c
 git clone https://github.com/Bazinga5/tic-tac-toe.git. 
 ```
 
-Then run this in shell: gradle run. And open the following url in your browser:
+Then run this in shell:  
+
+```
+./gradlew run 
+```
+
+And open the following url in your browser:
 
 ```
 http://localhost:4567 
