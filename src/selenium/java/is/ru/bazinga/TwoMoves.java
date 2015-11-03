@@ -9,7 +9,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class SeleniumTest1 {
+public class TwoMoves {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -18,17 +18,40 @@ public class SeleniumTest1 {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "http://localhost:4567";
+    baseUrl = "http://bazinga-tictactoe.herokuapp.com";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
   @Test
-  public void testO() throws Exception {
+  public void testTwoMoves() throws Exception {
     driver.get(baseUrl + "/");
-    driver.findElement(By.cssSelector("td")).click();
-    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[2]")).click();
+    for (int second = 0;; second++) {
+    	if (second >= 60) fail("timeout");
+    	try { if (isElementPresent(By.xpath("//div[@id='game__outlet']/table[@id='board']"))) break; } catch (Exception e) {}
+    	Thread.sleep(1000);
+    }
+
+    driver.findElement(By.xpath("//div[@id='game__outlet']/table[@id='board']/tbody/tr[2]/td/a")).click();
+    for (int second = 0;; second++) {
+    	if (second >= 60) fail("timeout");
+    	try { if (!isElementPresent(By.cssSelector(".is_loading"))) break; } catch (Exception e) {}
+    	Thread.sleep(1000);
+    }
+
     try {
-      assertEquals("o", driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td[2]")).getText());
+      assertEquals("x", driver.findElement(By.xpath("//table[@id='board']/tbody/tr[2]/td/a")).getText());
+    } catch (Error e) {
+      verificationErrors.append(e.toString());
+    }
+    driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td[2]/a")).click();
+    for (int second = 0;; second++) {
+    	if (second >= 60) fail("timeout");
+    	try { if (!isElementPresent(By.cssSelector(".is_loading"))) break; } catch (Exception e) {}
+    	Thread.sleep(1000);
+    }
+
+    try {
+      assertEquals("o", driver.findElement(By.xpath("//table[@id='board']/tbody/tr[3]/td[2]/a")).getText());
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
