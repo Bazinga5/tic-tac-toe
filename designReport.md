@@ -65,5 +65,5 @@ Final class diagram
 
 
 <p align="center">
-<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/diagram.jpg"  width="600">
+<img src="https://github.com/Bazinga5/tic-tac-toe/blob/master/markdown/diagram.jpg"  width="450">
 </p>
