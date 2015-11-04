@@ -42,7 +42,7 @@ public class Web implements SparkApplication {
         dto.message = player + " wins this game!";
       } else if (game.count >= 9) {
         dto.status = 2;
-        dto.message = "Everyone is a looser!";
+        dto.message = "Everyone is a looser! And you too!";
       } else {
         dto.status = 0;
         dto.message = "";
